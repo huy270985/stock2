@@ -104,6 +104,9 @@
     "long_term_data": {
       ".read": "auth != null"
     },
+    "weakest_data": {
+      ".read": "auth != null"
+    },
     "test": {
       ".read": true,
       ".write": true

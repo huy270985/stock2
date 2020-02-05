@@ -139,6 +139,24 @@ angular.module('superstockApp')
                 }
             })
 
+            .when('/weakest', {
+                templateUrl: 'views/main.html',
+                controller: 'MainCtrl',
+                resolve: {
+                    "currentAuth": ["auth", function (auth) {
+                        return auth.$waitForSignIn();
+                    }],
+                    "tableSettings": function() {
+                        return {
+                            "gridDataSource": "weakest_data",
+                            "defaultSort": "priceChange",
+                            "direction": "asc",
+                            "hideSymbol": true,
+                            "name": "weakest",
+                        }
+                    },
+                }
+            })
 
             .when('/full', {
                 templateUrl: 'views/full-stock.html',
