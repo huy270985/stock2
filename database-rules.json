@@ -107,6 +107,12 @@
     "weakest_data": {
       ".read": "auth != null"
     },
+    "price_peak_data": {
+      ".read": "auth != null"
+    },
+    "price_bottom_data": {
+      ".read": "auth != null"
+    },
     "test": {
       ".read": true,
       ".write": true

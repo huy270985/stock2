@@ -166,10 +166,16 @@
 					<div class="collapse navbar-collapse" id="js-navbar-collapse">
 						<ul class="nav navbar-nav navbar-left">
 							<li ng-class="{active:($root.link == 'main')}" ng-if="$root.user && $root.user.account">
-								<a href="#/"><i class="glyphicon glyphicon-th-large"></i> <span class="menu-item-text item-to-hide">Khoẻ nhất</span> </a>
+								<a href="#/"><i class="glyphicon glyphicon-arrow-up"></i> <span class="menu-item-text item-to-hide">Khoẻ nhất</span> </a>
 							</li>
 							<li ng-class="{active:($root.link == 'weakest')}" ng-if="$root.user && $root.user.account">
 								<a href="#/weakest"><i class="glyphicon glyphicon-arrow-down"></i> <span class="menu-item-text item-to-hide">Yếu nhất</span> </a>
+							</li>
+							<li ng-class="{active:($root.link == 'price_peak')}" ng-if="$root.user && $root.user.account">
+								<a href="#/price_peak"><i class="glyphicon glyphicon-download-alt"></i> <span class="menu-item-text item-to-hide">Giá đỉnh</span> </a>
+							</li>
+							<li ng-class="{active:($root.link == 'price_bottom')}" ng-if="$root.user && $root.user.account">
+								<a href="#/price_bottom"><i class="glyphicon glyphicon-eject"></i> <span class="menu-item-text item-to-hide">Giá đáy</span> </a>
 							</li>
 							<li ng-class="{active:($root.link == 'investment')}" ng-if="$root.user && $root.user.account">
 								<a href="#/investment"><i class="glyphicon glyphicon-signal"></i> <span class="menu-item-text item-to-hide">Cơ bản tốt</span> </a>
@@ -276,7 +282,7 @@
 			<div class="controls">
 
 			</div>
-			<p>Copyright @superstock v1.2.10</p>
+			<p>Copyright @superstock v1.2.11</p>
 		</div>
 
 	</div>

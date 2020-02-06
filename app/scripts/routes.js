@@ -158,6 +158,44 @@ angular.module('superstockApp')
                 }
             })
 
+            .when('/price_peak', {
+                templateUrl: 'views/main.html',
+                controller: 'MainCtrl',
+                resolve: {
+                    "currentAuth": ["auth", function (auth) {
+                        return auth.$waitForSignIn();
+                    }],
+                    "tableSettings": function() {
+                        return {
+                            "gridDataSource": "price_peak_data",
+                            "defaultSort": "priceChange",
+                            "direction": "desc",
+                            "hideSymbol": true,
+                            "name": "price_peak",
+                        }
+                    },
+                }
+            })
+
+            .when('/price_bottom', {
+                templateUrl: 'views/main.html',
+                controller: 'MainCtrl',
+                resolve: {
+                    "currentAuth": ["auth", function (auth) {
+                        return auth.$waitForSignIn();
+                    }],
+                    "tableSettings": function() {
+                        return {
+                            "gridDataSource": "price_bottom_data",
+                            "defaultSort": "priceChange",
+                            "direction": "desc",
+                            "hideSymbol": true,
+                            "name": "price_bottom",
+                        }
+                    },
+                }
+            })
+
             .when('/full', {
                 templateUrl: 'views/full-stock.html',
                 controller: 'FullStockCtrl',
