@@ -113,6 +113,9 @@
     "price_bottom_data": {
       ".read": "auth != null"
     },
+    "sideway_data": {
+      ".read": "auth != null"
+    },
     "test": {
       ".read": true,
       ".write": true
