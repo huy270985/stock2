@@ -196,6 +196,26 @@ angular.module('superstockApp')
                 }
             })
 
+            .when('/sideway', {
+                templateUrl: 'views/main.html',
+                controller: 'MainCtrl',
+                resolve: {
+                    "currentAuth": ["auth", function (auth) {
+                        return auth.$waitForSignIn();
+                    }],
+                    "tableSettings": function() {
+                        return {
+                            "gridDataSource": "sideway_data",
+                            "defaultSort": "priceChange",
+                            "direction": "desc",
+                            "hideSymbol": true,
+                            "name": "sideway",
+                        }
+                    },
+                }
+            })
+
+
             .when('/full', {
                 templateUrl: 'views/full-stock.html',
                 controller: 'FullStockCtrl',
