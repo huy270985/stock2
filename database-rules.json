@@ -116,6 +116,9 @@
     "sideway_data": {
       ".read": "auth != null"
     },
+    "buy_point_data": {
+      ".read": "auth != null"
+    },
     "test": {
       ".read": true,
       ".write": true

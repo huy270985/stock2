@@ -64,7 +64,7 @@ angular.module('superstockApp')
     // before trying to access that route
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider
-            .when('/', {
+            .when('/strongest', {
                 templateUrl: 'views/main.html',
                 controller: 'MainCtrl',
                 resolve: {
@@ -76,7 +76,7 @@ angular.module('superstockApp')
                             "gridDataSource": "summary_data",
                             "defaultSort": "volumeChange",
                             "direction": "desc",
-                            "name": "main",
+                            "name": "strongest",
                         }
                     },
                 }
@@ -215,6 +215,24 @@ angular.module('superstockApp')
                 }
             })
 
+            .when('/', {
+                templateUrl: 'views/main.html',
+                controller: 'MainCtrl',
+                resolve: {
+                    "currentAuth": ["auth", function (auth) {
+                        return auth.$waitForSignIn();
+                    }],
+                    "tableSettings": function() {
+                        return {
+                            "gridDataSource": "buy_point_data",
+                            "defaultSort": "priceChange",
+                            "direction": "desc",
+                            "hideSymbol": true,
+                            "name": "buy_point",
+                        }
+                    },
+                }
+            })
 
             .when('/full', {
                 templateUrl: 'views/full-stock.html',
